@@ -1,0 +1,178 @@
+{
+    "events": [
+        {
+            "description": "test event 1",
+            "startTime": "2023-11-01 13:23:00",
+            "endTime": "2023-11-01 14:23:00",
+            "notes": "first test event",
+            "category": "0"
+        },
+        {
+            "description": "test event 2",
+            "startTime": "2023-11-02 11:23:00",
+            "endTime": "2023-11-02 11:53:00",
+            "notes": "",
+            "category": "1"
+        },
+        {
+            "description": "test event 3",
+            "startTime": "2023-11-01 10:23:00",
+            "endTime": "2023-11-01 11:23:00",
+            "notes": "lorem ipsum gibberish",
+            "category": "2"
+        },
+        {
+            "description": "test event 4",
+            "startTime": "2023-11-02 16:23:00",
+            "endTime": "2023-11-02 18:33:00",
+            "notes": "blah blah blah",
+            "category": "3"
+        },
+        {
+            "description": "test event 5",
+            "startTime": "2023-11-01 18:23:00",
+            "endTime": "2023-11-01 18:43:00",
+            "notes": "",
+            "category": "4"
+        },
+        {
+            "description": "test event 6",
+            "startTime": "2023-11-03 22:23:00",
+            "endTime": "2023-11-03 23:23:00",
+            "notes": "",
+            "category": "5"
+        }
+    ],
+    "goals": [
+        {
+        "description": "test goal 1",
+        "dateCreated": "2023-02-25 22:22:22",
+        "dateDue": "2024-02-25 22:22:22",
+        "dateCompleted": "",
+        "goal": "45",
+        "achieved": "4"
+        },
+        {
+        "description": "test goal 2",
+        "dateCreated": "2023-02-25 22:22:22",
+        "dateDue": "2023-02-25 22:22:22",
+        "dateCompleted": "",
+        "goal": "100",
+        "achieved": "99"
+        },
+        {
+        "description": "test goal 3",
+        "dateCreated": "2023-02-25 22:22:22",
+        "dateDue": "2023-02-25 22:22:22",
+        "dateCompleted": "",
+        "goal": "0",
+        "achieved": "500"
+        }
+    ],
+
+    "habits": [
+        {
+            "description": "test habit 1",
+            "dateCreated": "2023-02-25 22:22:22",
+            "frequency": "1",
+            "period": "1"
+        },
+        {
+            "description": "test habit 2",
+            "dateCreated": "2023-02-25 22:22:22",
+            "frequency": "1",
+            "period": "1"
+        },
+        {
+            "description": "test habit 3",
+            "dateCreated": "2023-02-25 22:22:22",
+            "frequency": "1",
+            "period": "1"
+        },
+        {
+            "description": "test habit 4",
+            "dateCreated": "2023-02-25 22:22:22",
+            "frequency": "1",
+            "period": "1"
+        }
+    ],
+
+    "habitRecords": [
+        {
+            "id": "1",
+            "date": "2023-02-25 22:22:22"
+        },
+        {
+            "id": "1",
+            "date": "2023-02-25 22:22:23"
+        },
+        {
+            "id": "1",
+            "date": "2023-02-25 22:22:24"
+        },
+        {
+            "id": "2",
+            "date": "2023-02-25 22:22:21"
+        },
+        {
+            "id": "2",
+            "date": "2023-02-25 22:22:22"
+        },
+        {
+            "id": "2",
+            "date": "2023-02-25 22:22:23"
+        },
+        {
+            "id": "2",
+            "date": "2023-02-25 22:22:24"
+        },
+        {
+            "id": "3",
+            "date": "2023-02-25 22:22:22"
+        },
+        {
+            "id": "3",
+            "date": "2023-02-25 22:22:23"
+        }
+    ],
+
+    "tasks": [
+        {
+            "description": "test task 1",
+            "dateCreated": "2023-02-25 22:22:22",
+            "dateDue": "2021-02-25 22:22:23",
+            "dateCompleted": "2022-02-25 22:22:23",
+            "priority": "1"
+        },
+        {
+            "description": "test task 2",
+            "dateCreated": "2023-02-25 22:22:22",
+            "dateDue": "2023-02-25 23:22:22",
+            "dateCompleted": "",
+            "priority": "1"
+        },
+        {
+            "description": "test task 3",
+            "dateCreated": "2023-02-25 22:22:22",
+            "dateDue": "2023-02-25 21:22:22",
+            "dateCompleted": "",
+            "priority": "2"
+        },
+        {
+            "description": "test task 4",
+            "dateCreated": "2023-02-25 22:22:22",
+            "dateDue": "2023-02-25 22:23:22",
+            "dateCompleted": "",
+            "priority": "3"
+        },
+        {
+            "description": "test task 5",
+            "dateCreated": "2023-03-27 22:22:22",
+            "dateDue": "2023-03-27 22:22:22",
+            "dateCompleted": "",
+            "priority": "4"
+        }            
+    ]
+}
+
+ 
