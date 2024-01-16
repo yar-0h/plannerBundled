@@ -1,0 +1,34 @@
+
+.outerContainer {
+  height: 95vh;
+  background-color: #38faa9;
+  display: grid;
+  grid-template-rows: 5fr 2fr;
+}
+
+.innerContainer {
+  height: 100%;
+  background-color: #c4d467;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.incomplete {
+  background-color: #789186;
+  margin: 5px;
+}
+
+.complete {
+  background-color: #a7479a;
+  margin: 5px;
+}
+
+.infoboxside {
+  background-color: #7aabeb;   
+  margin: 5px;
+}
+
+.infoboxbottom {      
+  background-color: #a02f64;
+  margin: 5px;
+}

@@ -1,0 +1,28 @@
+
+    .container {
+      height: 100%;
+      background-color: #EEF1DB;
+      padding-top: 50px;
+      margin-bottom: 250px;
+
+      margin: 7px;
+      /* background-color: #e8e8e8; */
+      overflow-y: hidden;
+      display: grid;
+      grid-template-columns: 4fr 5fr;
+      grid-column-gap: 5px;
+
+    }
+  
+    .foot {
+      /* background-color: #e8e8e8; */
+      background-color: #EEF1DB;
+
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 1%;
+
+    }
+  

@@ -1,0 +1,22 @@
+.container {
+    background-color: rgb(176, 124, 235);
+    float: right;
+    grid-template-columns: auto 12fr;
+    display: grid;
+    height: 88vh;
+    border-top: 2px solid rgb(0, 183, 255);
+    border-bottom: 2px solid rgb(0, 183, 255);
+  }
+
+  .agendaInfoContainer {
+    display: grid;
+    overflow-y: scroll;
+    scroll-behavior: auto;
+  }
+
+  .agendaSidebarContainer {
+    max-width: 37px;
+  }
+
+
+

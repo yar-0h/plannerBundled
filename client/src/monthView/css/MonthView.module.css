@@ -1,0 +1,60 @@
+
+
+.outerContainer {
+  height: 90vh;
+  background-color: #38faa9;
+  display: grid;
+  grid-template-rows: 6fr 2fr;
+  margin: 3px;
+  margin-top: 50px;
+}
+
+.innerContainer {
+  height: 100%;
+  background-color: #c4d467;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.monthbox {
+  height: 100%;
+  background-color: #a6e2c8;
+  display: grid;
+  gap: 0px 0px;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.calendarbox {
+  display: grid;
+  grid-template-rows: 1fr 25fr;
+  background-color: #7aabeb;   
+}
+
+.monthlabel {
+  background-color: #032d63;   
+  display: grid;
+  gap: 0px 0px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.daylabel {
+  border: 1px solid black;
+}
+
+.daybox {
+  background-color: #47a792;
+  /* margin: 2px; */
+  border: 1px solid black;
+}
+
+.infoboxside {
+  background-color: #7aabeb;   
+  margin: 3px;
+}
+
+.infoboxbottom {      
+  background-color: #a02f64;
+  margin: 3px;
+}

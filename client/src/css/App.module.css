@@ -1,0 +1,42 @@
+.App {
+  /* background-Color: #E8E8E8;  */
+  background-Color: #EEF1DB; 
+
+  height: 100vh;
+  /* display: grid; */
+  overflow: hidden;
+  /* grid-template-rows: 1fr 2fr; */
+
+}
+
+.MeatContainer {
+}
+
+/* SAMPLE COLOR PALETTE */
+
+.palePink {
+  background-color: #fadadd ;
+}
+.coralBlush {
+  background-color: #e6b2b8;
+}
+.lightBrick {
+  background-color: #c45465;
+}
+.mutedBrown {
+  background-color: #997864;
+}
+.lavender {
+  background-color: #e6e6fa;
+}
+.pastelBlue {
+  background-color: #A7C7E7;
+}
+.washedGreen {
+  background-color: #909782;
+}
+.oliveGreen {
+  background-color: #808000;
+}
+
+

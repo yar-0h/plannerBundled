@@ -1,0 +1,65 @@
+
+/* 
+  .taskContainerOuter
+  .editContainer
+  .taskContainerInner
+    .taskInfo
+      .taskHeader
+      .taskFooter
+    .checkboxContainer */
+
+    .editContainer {}
+
+    .habitContainerOuter {
+      background-color: rgba(15, 75, 9, 0.397); 
+    }
+    
+    .habitContainerInner {
+      display: grid;
+      grid-template-columns: 4fr auto;
+    }
+
+    .habitContainerInner:hover {
+      background-color: rgb(86, 123, 138);
+    }
+    
+    .habitInfo {
+      display: grid;
+    }
+    
+    .habitHeader {
+      font-size: large;
+      font-weight: 500;
+      padding: 0px;
+      padding-left: 10px;
+    }
+    
+    .habitFooter {
+      font-size: small;
+      padding-left: 20%;
+      padding-right: 15%;
+      padding-top: 0%;
+      color: black;
+      background-color: #b979cc;
+      text-shadow: none;
+    }
+    
+    .checkboxContainer {
+      width: 100%;
+      height: 100%;
+      padding-left: 6px;
+      padding-top: 1px;
+      max-width: fit-content;
+      background-color: #b979cc;
+      border-left: 1px solid black;
+    }
+    
+    /* On mouse-over, add a grey background color */
+    .checkboxContainer:hover {
+      background-color: #ccc;
+    }
+    
+    .checkboxContainer:nth-child(even) {
+      background-color: rgba(224, 80, 159, 0.288); 
+    }
+ 

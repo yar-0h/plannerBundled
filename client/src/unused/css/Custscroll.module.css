@@ -1,0 +1,58 @@
+.customScrollbarsButton {
+  visibility: hidden;
+}
+
+.customScrollbarsContainer {
+  display: grid;
+  grid-template: auto / 1fr 0px;
+  overflow-x: visible;    
+  position: relative;
+}
+
+.customScrollbarsContent {
+  height: 90vh;
+  -ms-overflow-style: none;
+  overflow: auto;
+  scrollbar-width: none;
+}
+  
+.customScrollbarsContent::-webkit-scrollbar {
+  display: none;
+}
+
+.customScrollbarsScrollbar {
+  z-index: 0;
+  transform: translateX(-360px) translateY(-18px);
+
+  display: grid;
+  gap: 0.8rem;
+  grid-auto-flow: row;
+  grid-template: auto 1fr auto / 1fr;
+  place-items: center;
+}
+  
+.customScrollbarsTrack {
+  background-color: #ccc;
+  height: 108%;
+  visibility: hidden;
+  border-radius: 2px;
+  bottom: 0;
+  position: absolute;
+  top: 0;
+  width: 16px;
+}
+
+.customScrollbarsTrackAndThumb {
+  display: block;
+  height: 100%;
+  position: relative;
+  width: 32px;
+
+}
+
+.customScrollbarsThumb {
+  border-radius: 2px;
+  background-color: hsla(0, 0%, 20%, 0.534);
+  position: absolute;
+  width: 38px;
+}

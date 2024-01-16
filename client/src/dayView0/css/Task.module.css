@@ -1,0 +1,107 @@
+
+/* 
+  .taskContainerOuter
+  .editContainer
+  .taskContainerInner
+    .taskInfo
+      .taskHeader
+      .taskFooter
+    .checkboxContainer */
+
+.editContainer {}
+
+.taskContainerOuter {
+  background-color: rgba(15, 75, 9, 0.397); 
+}
+
+.taskContainerInner {
+  display: grid;
+  grid-template-columns: 4fr auto;
+}
+
+.taskContainerInner:hover {
+  background-color: #727272;
+}
+
+.priorityFlag {
+  height: 100%;
+}
+
+.taskInfo {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+}
+
+.taskHeader {
+  color: rebeccapurple;
+  font-size: large;
+  font-weight: 500;
+  padding: 0px;
+  padding-left: 10px;
+}
+
+.taskFooter {
+  font-size: small;
+  padding-left: 30px;
+  padding-top: 0%;
+  text-shadow: none;
+}
+
+.checkboxContainer {
+  width: 100%;
+  height: 100%;
+  padding-left: 6px;
+  padding-top: 1px;
+  max-width: fit-content;
+  background-color: #b979cc;
+  border-left: 1px solid black;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover {
+  background-color: #ccc;
+}
+
+.checkboxContainer:nth-child(even) {
+  background-color: rgba(224, 80, 159, 0.288); 
+}
+
+.taskComplete{
+  text-decoration: line-through;
+  color: #30303054;
+  background-color: darkgray;
+}
+
+.taskComplete .taskFooter {
+  color: gray;
+}
+
+.taskContainerInner .taskOverdue{
+  /* background-color: rgba(131, 35, 35, 0.418); */
+}
+
+.taskOverdue .taskHeader {
+  /* color: black;
+  text-shadow: -0.5px -0.5px 0 rgba(255, 0, 0, 0.4), 0.5px -0.5px 0 rgba(255, 0, 0, 0.4), -0.5px 0.5px 0 rgba(255, 0, 0, 0.4), 0.5px 0.5px 0 rgba(255, 0, 0, 0.4); */
+  color: rgb(233, 2, 2);
+  /* font-weight: bold; */
+}
+
+.taskOverdue .taskFooter {
+  color: rgb(92, 1, 1);
+}
+
+.taskDue{
+  color: black;
+}
+
+.taskNotDue{
+  /* color: black;
+  text-shadow: -0.5px -0.5px 0 rgba(255, 255, 0, 0.4), 0.5px -0.5px 0 rgba(255, 255, 0, 0.4), -0.5px 0.5px 0 rgba(255, 255, 0, 0.4), 0.5px 0.5px 0 rgba(255, 255, 0, 0.4); */
+  color: rgb(48, 48, 48);
+}
+

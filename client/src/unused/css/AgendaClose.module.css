@@ -1,0 +1,41 @@
+.agendaBG {
+    position: absolute;
+}
+
+.agendaCell {
+    border: 1px solid gray;
+    z-index: 200;
+}
+
+.agendaTable {
+    background-color: rgb(19, 121, 19);
+    border: 1px solid rgba(0, 0, 255, 0);
+    border-collapse: collapse;
+    width: 100%;   
+}
+
+.container {
+    overflow: visible;
+    max-height: 32rem;
+}
+
+.innerContainer {
+    z-index: 1;
+    position: relative;
+    margin-right: 8px;
+}
+
+.timeCell {
+    border: 1px solid black;
+}
+
+.timeColumn {
+    background-color: darkGreen;
+    width: 17%
+}
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+
+
+.outerContainer {
+  height: 90vh;
+  background-color: #38faa9;
+  display: grid;
+  grid-template-rows: 6fr 3fr;
+  margin: 3px;
+  margin-top: 50px;
+}
+
+.innerContainer {
+  height: 100%;
+  background-color: #c4d467;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.yearbox {
+  height: 100%;
+  background-color: #dce741;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.monthbox {
+  background-color: #861e70;
+  margin: 3px;
+}
+
+.infoboxside {
+  background-color: #7aabeb;   
+  margin: 3px;
+}
+
+.infoboxbottom {      
+  background-color: #a02f64;
+  margin: 3px;
+}

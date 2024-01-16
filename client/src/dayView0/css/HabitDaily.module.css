@@ -1,0 +1,21 @@
+.container {
+  height: 100%;
+  background-color: rgb(232, 232, 232);
+  float: left;
+  /* border-radius: 20px; */
+  bottom: 300px;
+}
+
+.habitContainer {
+  height: 100%;
+  background-color: #E3E1C9;
+
+  /* background-color: rgb(224, 224, 224); */
+  /* border-radius: 2px; */
+  /* margin-left: 8px;
+  margin-right: 8px; */
+  /* margin-top: 45px; */
+  text-align: center; 
+}
+
+

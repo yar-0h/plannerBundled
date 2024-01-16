@@ -1,0 +1,30 @@
+.button {
+  /* width: 400px; */
+  height: 25px;
+  /* background-color: #b8b8b8; */
+  background-color: #C9C7AF;
+  
+  /* border-radius: 6px; */
+  margin-top: 8px;
+  margin-bottom: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  text-align: center; 
+  padding-bottom:8px
+}
+
+.container {
+  background-color: #EEF1DB;
+
+  /* background-color: #854545; */
+
+  height: 5vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* flex-direction: row; */
+  margin: 0;
+  position: fixed;
+  width: 100%;
+}
+
+

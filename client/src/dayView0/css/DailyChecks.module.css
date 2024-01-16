@@ -1,0 +1,10 @@
+.container {
+    height: 88vh;
+    background-color: rgb(3, 80, 3);
+    background-color: #EEF1DB;
+    
+    float: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 5px;
+  }

@@ -1,0 +1,60 @@
+
+.outerContainer {
+  height: 90vh;
+  background-color: #38faa9;
+  display: grid;
+  grid-template-rows: 7fr 2fr;
+  margin: 3px;
+  margin-top: 50px;
+}
+
+.innerContainer {
+  height: 100%;
+  background-color: #c4d467;
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+
+.weekbox {
+  height: 100%;
+  background-color: #789186;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.daybox {
+  display: grid;
+  grid-template-rows: 1fr 20fr;
+  background-color: #a7479a;
+  margin: 3px;
+}
+
+.dayTitle {
+  background-color: #b880b0;
+}
+
+.dayContent {
+  background-color: #851674;
+}
+
+.infoboxside {
+  background-color: #7aabeb;   
+  margin: 3px;
+}
+
+.infoboxbottom {      
+  background-color: #a02f64;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 3px;
+}
+
+.taskPanel {      
+  background-color: gold;
+  margin: 3px;
+}
+
+.habitPanel {      
+  background-color: green;
+  margin: 3px;
+}

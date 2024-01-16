@@ -1,0 +1,131 @@
+/* color set 1
+ #E06C75
+ #dab5b8
+color set 2
+ #E5C07B
+ #e5c07b3f
+color set 3
+ #56B6C2
+ #56b5c23b
+color set 4
+ #61AFEF
+ 61afef3f
+color set 5
+ #C678DD
+ c678dd3a
+color set 6
+ #ABB2BF
+ abb2bf2d
+color set 7
+ #282C34 
+ 282c3483
+ */
+
+
+.popupContainer {
+    position: fixed;
+    background-color: rgba(5, 27, 46, 0.7);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    min-height: 300px;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
+    margin: 20px auto;
+    overflow: auto;
+    top: 5%;
+    display: grid;
+    grid-template-rows: 1fr 12fr;
+}
+
+.header {
+    min-height: 30px;
+    border-bottom: 2px solid black;
+    /* background-color: rgb(70, 22, 22); */
+    background-color:  #282c34;
+    font-size: xx-large;
+    padding-left: 10px;
+}
+
+.form {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 2fr 1fr 1fr;
+    padding: 10px;
+    background-color: #282c343b; 
+
+}
+
+.title {
+    /* background-color: rgb(128, 247, 128); */
+}
+
+.description {
+    /* background-color: rgb(86, 150, 86); */
+}
+
+.eventLength {
+    background-color:  #e5c07b3f; 
+    padding: 5px;
+    font-size: xx-large;
+}
+
+.from {
+    /* background-color: rgb(54, 224, 54); */
+}
+
+.to {
+    /* background-color: rgb(16, 192, 16); */
+    border-bottom: 2px solid black;
+}
+
+.noteLabel {
+    padding-bottom: 10px;
+    /* background-color: rgb(66, 102, 66); */
+}
+
+.notes {
+    padding-top: 15px;
+    /* background-color: rgb(66, 102, 66); */
+}
+
+.category {
+    width: 100%;
+    /* background-color: rgb(12, 63, 12); */
+    padding-top: 15px;
+    align-self: center;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content:center;
+}
+
+.notice {
+    justify-self: center;
+    font-size: large;
+    color: rgb(173, 25, 25);
+    /* background-color: rgb(152, 207, 152); */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* background-color: #dab5b8;  */
+    /* background-color: rgb(10, 161, 10); */
+    padding: 20px;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.fieldLabel {
+    float: left;
+}
+
+.field {
+    float: right;
+}

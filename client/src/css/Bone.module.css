@@ -1,0 +1,15 @@
+
+    .container {
+      height: 100vh;
+      background-color: #e8e8e8;
+    }
+  
+    .foot {
+      background-color: #e8e8e8;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      height: 7px;
+
+    }
+  

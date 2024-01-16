@@ -1,0 +1,10 @@
+.returnButton {
+    transition: opacity 0.2s;
+    opacity: 0.3;
+  }
+
+.returnButton:hover {
+    opacity: 1
+}
+
+
