@@ -11,37 +11,50 @@
     .editContainer {}
 
     .habitContainerOuter {
-      background-color: rgba(15, 75, 9, 0.397); 
+      background-color: rgba(58, 133, 52, 0.315); 
+      height: 30px;
     }
     
     .habitContainerInner {
       display: grid;
-      grid-template-columns: 4fr auto;
+      grid-template-columns: 6fr auto;
     }
 
     .habitContainerInner:hover {
-      background-color: rgb(86, 123, 138);
+      background-color: rgba(0, 0, 0, 0.3);
     }
     
     .habitInfo {
-      display: grid;
     }
     
     .habitHeader {
+      width: 100%;
       font-size: large;
       font-weight: 500;
       padding: 0px;
-      padding-left: 10px;
+
+      display: grid;
+      text-align: left;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 6fr) auto;
+      white-space: nowrap;
+      overflow: hidden;
+      justify-items: left;
+    }
+
+    .habitDesc {
+      right: 50px;
     }
     
     .habitFooter {
       font-size: small;
-      padding-left: 20%;
-      padding-right: 15%;
-      padding-top: 0%;
+
+      /* margin: 10%; */
       color: black;
-      background-color: #b979cc;
+      /* background-color: #b979cc; */
       text-shadow: none;
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr auto;
     }
     
     .checkboxContainer {
@@ -50,16 +63,16 @@
       padding-left: 6px;
       padding-top: 1px;
       max-width: fit-content;
-      background-color: #b979cc;
+      /* background-color: #b979cc56; */
       border-left: 1px solid black;
     }
     
     /* On mouse-over, add a grey background color */
     .checkboxContainer:hover {
-      background-color: #ccc;
+      /* background-color: #ccc; */
     }
     
     .checkboxContainer:nth-child(even) {
-      background-color: rgba(224, 80, 159, 0.288); 
+      /* background-color: rgba(224, 80, 159, 0.288);  */
     }
  

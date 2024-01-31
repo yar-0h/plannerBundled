@@ -54,7 +54,6 @@ app.delete('/:id', async function(req, res , next) {
 });
 
 app.delete('/', async function(req, res , next) {
-    console.log("WE NEED TO BE HERE");
     try {
         res.json(await habits.removeAllRecords());
     } catch (err) {

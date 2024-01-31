@@ -27,8 +27,8 @@ export const AgendaInfo = (props) => {
     const halfHourLocYOffset = 6 // vertical positioning offset for half hour label
 
     const singleDay = []
-
-    const daysEvents = props.events.data.filter(x =>
+    
+    const daysEvents = props.events.filter(x =>
       (new Date(x.startTime).getMonth() === date.getMonth() &&
         new Date(x.startTime).getDate() === date.getDate()) ||
         (new Date(x.endTime).getMonth() === date.getMonth() &&
@@ -211,7 +211,7 @@ export const AgendaInfo = (props) => {
 
 // Prop types for Component
 AgendaInfo.propTypes = {
-  events: PropTypes.object,
+  events: PropTypes.array,
   today: PropTypes.object,
   selectedDay: PropTypes.object,
   setTimeDate: PropTypes.func,

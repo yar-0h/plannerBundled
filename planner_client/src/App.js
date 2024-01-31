@@ -71,7 +71,6 @@ export default function App () {
     const { data } = await Axios.get(
       'http://localhost:8080/events'
     )
-
     return data
   }
 
@@ -100,6 +99,15 @@ export default function App () {
     return data
   }
 
+  async function fetchHabitRecords () {
+    const { data } = await Axios.get(
+      'http://localhost:8080/habitRecords'
+    )
+    // console.log("FETCHING HABITS")
+
+    return data
+  }
+
   // QUERY RESPONSES CONTAIN:
   // data,
   // error,
@@ -116,9 +124,10 @@ export default function App () {
   // remove,
   // status,
   const eventsResponse = useQuery('events', fetchEvents, { cacheTime: 5000 })
-  const tasksResponse = useQuery('tasks', fetchTasks)
+  const tasksResponse = useQuery('tasks', fetchTasks, { cacheTime: 5000 })
   // const goalsResponse = useQuery("getGoals", fetchGoals)
   const habitsResponse = useQuery('habits', fetchHabits, { cacheTime: 5000 })
+  const habitRecordsResponse = useQuery('habitRecords', fetchHabitRecords, { cacheTime: 5000 })
 
   let view
   switch (currentView) {
@@ -155,6 +164,7 @@ export default function App () {
           events={ eventsResponse.data }
           tasks={ tasksResponse.data }
           habits={ habitsResponse.data }
+          habitRecords={habitRecordsResponse.data}
           selectedDay= {selectedDay}
           selectDay = {selectDay}
           currentTime= {currentTime}
@@ -179,7 +189,7 @@ export default function App () {
       />
 
       {view}
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </div>
   )
 }

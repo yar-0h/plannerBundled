@@ -4,7 +4,6 @@
   float: left;
   /* border-radius: 20px; */
   bottom: 300px;
-
 }
 
 .taskContainer {
@@ -16,6 +15,10 @@
   /* margin-left: 8px; */
   /* margin-right: 8px; */
   /* text-align: center;  */
+}
+
+.taskHead {
+  background-color: #576aa0a2;
 }
 
 .newTaskButton {
@@ -39,5 +42,5 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: rgba(46, 46, 46, 0.275); 
+  background-color: #0000002f; 
 }

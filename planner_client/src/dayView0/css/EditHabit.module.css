@@ -10,22 +10,81 @@
 
 .container {
     position: relative;
-    width: 50%;
-    min-height: 300px;
-    background-color: aquamarine;
-    border: 1px solid red;
-    border-radius: 4px;
+    width: 400px;
+    /* min-height: 300px; */
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(0, 0, 0);
     margin: 20px auto;
-    padding: 20px;
     overflow: auto;
-    top: 10%;
+    top: 5%;
+
 }
 
-.btnClose {
-    cursor: pointer;
-    border: 1px solid blue;
-    border-radius: 50%;
-    position: fixed;
-    right: calc(25% - 30px);
-    top: 13%;
+.header {
+    min-height: 30px;
+    border-bottom: 2px solid black;
+    background-color:  #282c34;
+    font-size: x-large;
+    padding-left: 10px;
 }
+
+.form {
+    display: grid;
+    padding: 10px;
+    background-color: #282c343b; 
+}
+
+.title {
+}
+
+.description {
+    padding-bottom: 15px;
+    float: left;
+}
+
+.periodGroup {
+    border-bottom: 2px solid black;
+    padding-bottom: 15px;
+    display: grid;
+    justify-content: left;
+}
+
+.periodField {
+    width: 50px;
+}
+
+.periodLeft {
+    float: right;
+}
+
+.periodRight {
+    float: left;
+}
+
+.priority {
+    padding-top: 15px;
+    align-self: center;
+    border-bottom: 2px solid black;
+}
+
+.notice {
+    justify-self: center;
+    font-size: large;
+    color: rgb(173, 25, 25);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* .fieldLabel {
+    float: left;
+}
+
+.field {
+    float: right;
+} */

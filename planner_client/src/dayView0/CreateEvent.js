@@ -19,17 +19,18 @@ const CreateEvent = (props) => {
   const [minuteDiff, setMinuteDiff] = useState(30)
   const [message, setMessage] = useState('')
 
+
   const useAddEvent = () => {
     const queryClient = useQueryClient()
     return useMutation(addEvent, {
       onSuccess: (data) => {
-        // console.log(data)
         // queryClient.invalidateQueries('tasks');
         queryClient.setQueryData('events', (oldQueryData) => {
-          return {
-            ...oldQueryData,
-            data: [...oldQueryData.data, ...data.data]
-          }
+          // console.log(newEvent)
+
+          const testobj = [...oldQueryData, data.data]
+          console.log(testobj)
+          return [...oldQueryData, data.data]
         })
       }
     })

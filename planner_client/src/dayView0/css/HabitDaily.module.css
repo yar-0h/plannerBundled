@@ -1,3 +1,4 @@
+
 .container {
   height: 100%;
   background-color: rgb(232, 232, 232);
@@ -16,6 +17,10 @@
   margin-right: 8px; */
   /* margin-top: 45px; */
   text-align: center; 
+}
+
+.habitHead {
+  background-color: rgba(57, 133, 52, 0.692); 
 }
 
 

@@ -41,6 +41,7 @@ const EditHabit = (props) => {
       onSuccess: (data) => {
         // queryClient.invalidateQueries('habits');
         queryClient.setQueryData('habits', (oldQueryData) => {
+          
           const habitIdToUpdate = data.data[0].id // the ID of the habit to update
 
           const updatedHabits = oldQueryData.data.map((habit) => {
@@ -123,37 +124,49 @@ const EditHabit = (props) => {
   }
 
   return (
-        <div className={style.popupContainer}>
-            <div className={style.container}>
-                <button className={style.btnClose} onClick={props.handleClose}>X</button>
-                <form onSubmit={editHabit}>
-                    <input
-                        type='text'
-                        value={description}
-                        placeholder="Description"
-                        onChange={(e) => setDescription(e.target.value)}
-                    />
-                    <input
-                        type='number'
-                        value={frequency}
-                        placeholder="Frequency"
-                        onChange={(e) => setFrequency(e.target.value)}
-                    />
-                    <input
-                        type='number'
-                        value={period}
-                        placeholder="Period"
-                        onChange={(e) => setPeriod(e.target.value)}
-                    />
-                    <button type="submit">Update Habit</button>
-                    <button type="button" onClick={deleteHabit}>Delete Habit</button>
-
-                    <div className="message">
-                        {/* {message ? <p>{message}</p> : null} */}
-                    </div>
-                </form>
+    <div className={style.popupContainer} onClick={props.handleClose}>
+      <div className={style.container} onClick={(e) => e.stopPropagation()}>
+        <div className={style.header} style={{ backgroundColor: 'grey' }}>{description}</div>
+        <form onSubmit={editHabit}>
+          <div className={style.form} style={{ backgroundColor: 'darkgray' }}>
+            <div className={style.title}>
+              <div className={`${style.description} ${style.field}`}>
+                <input
+                  type='text'
+                  value={description}
+                  placeholder="Description"
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              </div>
             </div>
-        </div>
+            <div className={style.periodGroup}>
+              <div className={`${style.periodLeft} ${style.fieldLabel}`}>EVERY</div>
+              <div className={style.field}>
+                <input
+                  className={style.periodField}
+                  type='text'
+                  inputMode='numeric'
+                  pattern="[1-9]*"
+                  value={period}
+                  onChange={(e) => setPeriod(e.target.value)}
+                />
+              </div>
+              <div className={`${style.periodRight} ${style.fieldLabel}`}>DAYS</div>
+            </div>
+            <div>
+              <div className={style.notice}>
+                {<p>{}</p>}
+              </div>
+              <div className={style.buttons}>
+                  <button type="submit">Update Habit</button>
+                  <div/>
+                  <button type="button" onClick={deleteHabit}>Delete Habit</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   )
 }
 

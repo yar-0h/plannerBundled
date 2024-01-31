@@ -11,6 +11,7 @@ const Meat = (props) => {
         <DailyChecks
           tasks={props.tasks}
           habits={props.habits}
+          habitRecords={props.habitRecords}
         />
         <Agenda
           currentTime= {props.currentTime}
@@ -26,9 +27,10 @@ const Meat = (props) => {
 
 // Prop types for Component
 Meat.propTypes = {
-  tasks: PropTypes.object.isRequired,
-  habits: PropTypes.object.isRequired,
-  events: PropTypes.object.isRequired,
+  tasks: PropTypes.array.isRequired,
+  habits: PropTypes.array.isRequired,
+  habitRecords: PropTypes.array.isRequired,
+  events: PropTypes.array.isRequired,
   currentTime: PropTypes.object,
   selectedDay: PropTypes.object,
   selectDay: PropTypes.func
@@ -36,9 +38,10 @@ Meat.propTypes = {
 
 // Default Props for our Component
 Meat.defaultProps = {
-  tasks: { data: [] },
-  habits: { data: [] },
-  events: { data: [] },
+  tasks: [],
+  habits: [],
+  habitRecords: [],
+  events: [],
   currentTime: new Date(),
   selectedDay: new Date(),
   selectDay: function () { }

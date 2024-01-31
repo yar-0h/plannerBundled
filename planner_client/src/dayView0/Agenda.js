@@ -108,7 +108,7 @@ const Agenda = (props) => {
     const generateDaysEvents = (dayOfEvents) => {
       // console.log(currentDay);
       if (props.events) {
-        setDaysEvents(props.events.data.filter(x =>
+        setDaysEvents(props.events.filter(x =>
           (new Date(x.startTime).getMonth() === dayOfEvents.getMonth() &&
                         new Date(x.startTime).getDate() === dayOfEvents.getDate()) ||
                         (new Date(x.endTime).getMonth() === dayOfEvents.getMonth() &&
@@ -170,7 +170,7 @@ const Agenda = (props) => {
 
 // Prop types for Component
 Agenda.propTypes = {
-  events: PropTypes.object,
+  events: PropTypes.array,
   currentTime: PropTypes.object,
   selectedDay: PropTypes.object,
   selectDay: PropTypes.func

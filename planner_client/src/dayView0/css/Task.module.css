@@ -11,16 +11,17 @@
 .editContainer {}
 
 .taskContainerOuter {
-  background-color: rgba(15, 75, 9, 0.397); 
+  /* background-color: #a78913; */
 }
 
 .taskContainerInner {
   display: grid;
   grid-template-columns: 4fr auto;
+  background-color: #576aa05d;
 }
 
 .taskContainerInner:hover {
-  background-color: #727272;
+  background-color: rgba(65, 55, 110, 0.5);
 }
 
 .priorityFlag {
@@ -37,7 +38,6 @@
 }
 
 .taskHeader {
-  color: rebeccapurple;
   font-size: large;
   font-weight: 500;
   padding: 0px;
@@ -46,7 +46,7 @@
 
 .taskFooter {
   font-size: small;
-  padding-left: 30px;
+  padding-left: 15px;
   padding-top: 0%;
   text-shadow: none;
 }
@@ -57,17 +57,13 @@
   padding-left: 6px;
   padding-top: 1px;
   max-width: fit-content;
-  background-color: #b979cc;
+  /* background-color: #bab5a1; */
   border-left: 1px solid black;
 }
 
 /* On mouse-over, add a grey background color */
 .checkboxContainer:hover {
-  background-color: #ccc;
-}
-
-.checkboxContainer:nth-child(even) {
-  background-color: rgba(224, 80, 159, 0.288); 
+  /* background-color: #ccc; */
 }
 
 .taskComplete{

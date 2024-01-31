@@ -15,11 +15,12 @@ const TaskDaily = (props) => {
   }
 
   // trim old, completed tasks (over 24 hrs)
+  if (props.tasks) {
+    //const sortedTasks = props.tasks.filter((task) => ((((new Date() - new Date(task.dateCompleted)) / 1000 / 60 / 60) < 24) && (task.complete === 1)) || (task.complete === 0))
+    // console.log(sortedTasks)
+    // props.tasks = props.tasks.filter((task) => ((((new Date() - new Date(task.dateCompleted)) / 1000 / 60 / 60) < 24) && (task.complete === 1)) || (task.complete === 0))
 
-  if (props.tasks.data) {
-    props.tasks.data = props.tasks.data.filter((task) => ((((new Date() - new Date(task.dateCompleted)) / 1000 / 60 / 60) < 24) && (task.complete === 1)) || (task.complete === 0))
-
-    props.tasks.data.sort(function (task1, task2) {
+    props.tasks.sort(function (task1, task2) {
       if (task1.complete > task2.complete) return 1
       if (task1.complete < task2.complete) return -1
 
@@ -40,7 +41,7 @@ const TaskDaily = (props) => {
         {/* {console.log(props.tasks)} */}
         {/* <table style={{width:'100%'}}> */}
         <table>
-          <thead>
+          <thead className={style.taskHead}>
             <tr>
               <td>
             TASKS
@@ -48,8 +49,8 @@ const TaskDaily = (props) => {
             </tr>
           </thead>
           <tbody>
-            {props.tasks.data &&
-              props.tasks.data.map((e) => {
+            {props.tasks &&
+              props.tasks.map((e) => {
                 // console.log(e)
                 return (
                   <tr key={e.id}>
@@ -83,12 +84,7 @@ const TaskDaily = (props) => {
 
 // Prop types for Component
 TaskDaily.propTypes = {
-  tasks: PropTypes.object
+  tasks: PropTypes.array
 }
-
-// Default Props for our Component
-// Agenda.defaultProps = {
-//   handleClose: function () { }
-// }
 
 export default TaskDaily

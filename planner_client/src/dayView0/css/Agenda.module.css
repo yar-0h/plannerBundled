@@ -4,8 +4,8 @@
     grid-template-columns: auto 12fr;
     display: grid;
     height: 88vh;
-    border-top: 2px solid rgb(0, 183, 255);
-    border-bottom: 2px solid rgb(0, 183, 255);
+    border-top: 2px solid rgb(148, 137, 100);
+    border-bottom: 2px solid rgb(148, 137, 100);
   }
 
   .agendaInfoContainer {

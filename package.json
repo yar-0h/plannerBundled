@@ -3,7 +3,7 @@
   "version": "0.7.8",
   "description": "A desktop planner app, featuring a to-do list and habit tracker",
   "private": true,
-  "workspaces": ["plannerClient", "plannerServer"],
+  "workspaces": ["planner_client", "planner_server"],
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

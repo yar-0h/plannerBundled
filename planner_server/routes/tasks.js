@@ -17,8 +17,8 @@ app.get('/', async function(req, res , next) {
     }
 });
 
-/* POST events */
-app.post('/', async function(req, res , next) {
+/* POST tasks */
+app.post('/', async function(req, res , next) {    
     try {
         res.json(await tasks.create(req.body));
     } catch (err) {
@@ -27,7 +27,7 @@ app.post('/', async function(req, res , next) {
     }
 });
 
-/* PUT events */
+/* PUT tasks */
 app.put('/:id', async function(req, res , next) {
     try {
         res.json(await tasks.update(req.params.id, req.body));
@@ -37,7 +37,7 @@ app.put('/:id', async function(req, res , next) {
     }
 });
 
-/* DELETE events */
+/* DELETE tasks */
 app.delete('/', async function(req, res , next) {
     try {
         res.json(await tasks.removeAll());

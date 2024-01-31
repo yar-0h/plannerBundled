@@ -22,20 +22,17 @@ const EditTask = (props) => {
       onSuccess: (data) => {
         // queryClient.invalidateQueries('tasks');
         queryClient.setQueryData('tasks', (oldQueryData) => {
-          const taskIdToUpdate = data.data[0].id // the ID of the task to update
-
-          const updatedTasks = oldQueryData.data.map((task) => {
+          const taskIdToUpdate = data.id // the ID of the task to update
+          console.log(taskIdToUpdate)
+          const updatedTasks = oldQueryData.map((task) => {
             if (task.id === taskIdToUpdate) {
               // create a new object for the updated task
-              return data.data[0]
+              return data.data
             }
             return task
           })
 
-          return {
-            ...oldQueryData,
-            data: updatedTasks
-          }
+          return updatedTasks
         })
       }
     })
@@ -69,10 +66,7 @@ const EditTask = (props) => {
       onSuccess: () => {
         // queryClient.invalidateQueries('tasks');
         queryClient.setQueryData('tasks', (oldQueryData) => {
-          return {
-            ...oldQueryData,
-            data: [...oldQueryData.data.filter((task) => task.id !== props.id)]
-          }
+          return oldQueryData.filter((task) => task.id !== props.id)
         })
       }
     })

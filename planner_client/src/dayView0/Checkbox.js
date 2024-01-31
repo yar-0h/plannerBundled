@@ -11,7 +11,7 @@ export const Checkbox = (tc, ct) => {
                 checked={Boolean(tc)}
                 onChange={ct}/>
             <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill={'#485B63'}>
-                <rect width="100" height="100" fill={'light grey'}/>
+                <rect width="100" height="100" fill={'white'}/>
                 <path d="M 10 10 L 90 90" stroke="red" strokeDasharray="113" strokeDashoffset="113"/>
             </svg>
         </div>

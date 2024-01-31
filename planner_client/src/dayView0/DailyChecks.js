@@ -9,6 +9,7 @@ const DailyChecks = (props) => {
     <div className={style.container}>
         <HabitDaily
           habits={props.habits}
+          habitRecords={props.habitRecords}
         />
         <TaskDaily
           tasks={props.tasks}
@@ -19,8 +20,9 @@ const DailyChecks = (props) => {
 
 // Prop types for Component
 DailyChecks.propTypes = {
-  habits: PropTypes.object,
-  tasks: PropTypes.object
+  habits: PropTypes.array,
+  habitRecords: PropTypes.array,
+  tasks: PropTypes.array
 }
 
 // Default Props for our Component

@@ -1,58 +1,31 @@
 // a service
 // provides the 'other end of the tube provided by the routes connecting to the URI (uniform resource identifier)'
 // has methods used to get and create whatever resource this manages
-const mysql = require('mysql2/promise');
 const db = require('../db/db');
-const helper = require('../helper')
 
 // EVENTS
 // retrieve all events
 async function getAll() {
-    const rows = await db.query(
-        `SELECT * FROM events`
+    const results = await db.query(
+        `SELECT * FROM events`, []
     );
-
-    const data = helper.emptyOrRows(rows); 
     
-    return {
-        data,
-    }
+    return results
 }
-
-// // retrieve all events within time period
-// async function getAll(page = 1, startTime, endTime) {
-//     const offset = helper.getOffset(page, config.listPerPage);
-
-//     const rows = await db.query(
-//         `SELECT * FROM events \
-//          WHERE startTime <= ${endTime} 
-//          AND endTime >= ${startTime}
-//          LIMIT ${offset}, ${config.listPerPage}`
-//     );
-
-//     const data = helper.emptyOrRows(rows); 
-//     const meta = {page};
-    
-//     return {
-//         data,
-//         meta
-//     }
-// }
-
 
 // retrieve single event
 async function get(id) {
-    var sql = mysql.format("SELECT * FROM events WHERE id=?", id);
+    var sql = "SELECT * FROM events WHERE id=?"
 
-    const result = await db.query(sql);
+    const result = await db.query(sql, id);
 
     return result;
 }
 
 // create single event
 async function create(event) {
-    var sql = mysql.format("INSERT INTO events (description, startTime, endTime, notes, category) VALUES (?, ?, ?, ?, ?)", 
-        [event.description, event.startTime, event.endTime, event.notes, event.category]);
+    var sql = "INSERT INTO events (description, startTime, endTime, notes, category) VALUES (?, ?, ?, ?, ?)"
+    var params = [event.description, event.startTime, event.endTime, event.notes, event.category]
 
     const msDiff = Math.abs(new Date(event.startTime) - new Date(event.endTime));
     const minDiff = Math.floor((msDiff/1000)/60);
@@ -69,64 +42,41 @@ async function create(event) {
         throw new Error('missing event description');
     }
     
-    const result = await db.query(sql);
+    const result = await db.affect(sql, params);
 
-    if (result.affectedRows) {
-        console.log(`event ${result.insertId} created successfully`);
+    if (result.changes > 0) {
+        console.log(`event ${result.lastID} created successfully`);
     }
     else {console.log('error creating event');}
 
-    const returnResult = await get(result.insertId);
-
+    event.id = result.lastID
     
-    return returnResult;
+    return event;
 }
-
-
-// // create single event
-// async function create(event) {
-//     var sql = mysql.format("INSERT INTO events (description, startTime, endTime) VALUES (?, ?, ?)", 
-//         [event.description, event.startTime, event.endTime]);
-
-//     const result = await db.query(sql);
-
-//     let message = 'error creating event';
-//     if (result.affectedRows) {
-//         message = 'event created successfully';
-//     }
-//     return {message};
-// }
 
 // delete single event
 async function remove(id) {
-    var sql = mysql.format("DELETE FROM events WHERE id=?", id); 
+    var sql = "DELETE FROM events WHERE id=?"
 
-    const result = await db.query(sql);
+    const result = await db.affect(sql, id);
 
-    let message = 'error deleting event'
-    if (result.affectedRows) {
-        console.log('event deleted successfully')
-        message = 'event deleted successfuly'
+    if (result.changes > 0) {
+        console.log(`event ${id} deleted successfully`);
     }
-    else {console.log('error deleting event')}
+    else {console.log(`error deleting event ${id}`)}
 
-    return {message};
+    return result.changes;
 }
 
 // delete all events
 async function removeAll() {
-    const result = await db.query(
-        `TRUNCATE TABLE events`
+    const result = await db.affect(
+        `DELETE FROM events`, []
     );
 
-    let message = 'all events deleted successfuly'
-    if (result.affectedRows) {
-        console.log('error deleting all events')
-        message = 'error deleting all events'
-    }
-    else {console.log('all events deleted successfully')}
-
-    return {message};
+    console.log(`removed ${result.changes} events`)
+    
+    return result.changes;
 }
 
 // // delete all events in time window
@@ -174,19 +124,18 @@ async function update(id, event) {
         throw new Error('missing event description');
     }
     
-    var sql = mysql.format("UPDATE events SET description=?, startTime=?, endTime=?, notes=?, category=? WHERE id=?", [event.description, event.startTime, event.endTime, event.notes, event.category, id]); 
-
-    const result = await db.query(sql);
+    var sql = "UPDATE events SET description=?, startTime=?, endTime=?, notes=?, category=? WHERE id=?"
+    var params = [event.description, event.startTime, event.endTime, event.notes, event.category, id]
+    const result = await db.affect(sql, params);
     
-    if (result.affectedRows) {
+    if (result.changes > 0) {
         console.log(`event ${id} updated successfully`);
     }
-    else {console.log('error updating event');}
+    else {console.log(`error updating event ${id}`);}
+        
+    event.id = Number(id)
     
-    const returnResult = await get(id);
-    
-    return returnResult;
-    
+    return event
 }
 
 

@@ -14,6 +14,10 @@ const HabitDaily = (props) => {
     setNewHabitOpen(!newHabitOpen)
   }
 
+  const record = (id) => {
+    return props.habitRecords.filter(x => (x.id === id))
+  }
+
   return (
     <div className={style.container}>
       {newHabitOpen && <CreateHabit handleClose={toggleCreateHabit}/>}
@@ -25,7 +29,7 @@ const HabitDaily = (props) => {
           {/* {console.log(props.habits)} */}
           {/* <table style={{width:'100%'}}> removed style while troubleshooting, maybe extraneous? */}
           <table>
-            <thead>
+            <thead className={style.habitHead}>
               <tr>
                 <td>
               HABITS
@@ -34,8 +38,8 @@ const HabitDaily = (props) => {
             </thead>
 
             <tbody>
-              {props.habits.data &&
-                props.habits.data.map((e) => {
+              {props.habits &&
+                props.habits.map((e) => {
                   // console.log(e)
                   return (
                       <tr key={e.id}>
@@ -45,6 +49,7 @@ const HabitDaily = (props) => {
                           dateCreated={e.dateCreated}
                           period={e.period}
                           freq={e.frequency}
+                          record={record(e.id)}
                         />
                       </tr>
                   )
@@ -61,12 +66,18 @@ const HabitDaily = (props) => {
         </div>
       </div>
     </div>
-  )
+  )            
 }
+
+{/* <FontAwesomeIcon icon="fa-solid fa-square-xmark" /> */}
+{/* <FontAwesomeIcon icon="fa-solid fa-square-check" /> */}
+{/* <FontAwesomeIcon icon="fa-regular fa-square" /> */}
+{/* <FontAwesomeIcon icon="fa-solid fa-fire" /> */}
 
 // Prop types for Component
 HabitDaily.propTypes = {
-  habits: PropTypes.object
+  habits: PropTypes.array,
+  habitRecords: PropTypes.array
 }
 
 // Default Props for our Component

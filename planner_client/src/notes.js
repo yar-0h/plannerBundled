@@ -5,6 +5,7 @@
 // ? - task table misaligns itself on page change/return
 
 // ! - CHOPPING BLOCK
+// ? - habit/task scrolling text
 
 // ! - Agenda Work
 // * TODO- finish agenda alpha
@@ -38,7 +39,7 @@
 // TODO- habit edit window close on outside click
 // TODO- modernize habit creation window style
 // TODO- modernize habit edit window style
-// TODO- add streak graphic
+// // TODO- add streak graphic
 // TODO- add cooldown/ripening logic
 // // TODO- figure out tracking system
 // // TODO- go away? fade? while not due anytime soon
@@ -173,6 +174,7 @@
 // TODO- recheck sketches
 
 // ! - completed
+// //- task realign due date
 // // TODO- make tasks a fixed height/no word wrap
 // // TODO- convert create task window to new style
 // // TODO- convert edit task window to new style

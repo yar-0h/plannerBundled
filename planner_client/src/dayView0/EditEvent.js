@@ -25,20 +25,17 @@ const EditEvent = (props) => {
       onSuccess: (data) => {
         // queryClient.invalidateQueries('events');
         queryClient.setQueryData('events', (oldQueryData) => {
-          const eventIdToUpdate = data.data[0].id // the ID of the event to update
+          const eventIdToUpdate = data.data.id // the ID of the event to update
 
-          const updatedEvents = oldQueryData.data.map((event) => {
+          const updatedEvents = oldQueryData.map((event) => {
             if (event.id === eventIdToUpdate) {
               // create a new object for the updated event
-              return data.data[0]
+              return data.data
             }
             return event
           })
 
-          return {
-            ...oldQueryData,
-            data: updatedEvents
-          }
+          return updatedEvents
         })
       }
     })
@@ -78,10 +75,7 @@ const EditEvent = (props) => {
       onSuccess: () => {
         // queryClient.invalidateQueries('events');
         queryClient.setQueryData('events', (oldQueryData) => {
-          return {
-            ...oldQueryData,
-            data: [...oldQueryData.data.filter((event) => event.id !== props.id)]
-          }
+          return oldQueryData.filter((event) => event.id !== props.id)
         })
       }
     })

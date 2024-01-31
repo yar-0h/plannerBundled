@@ -25,10 +25,7 @@ const CreateTask = (props) => {
       onSuccess: (data) => {
         // queryClient.invalidateQueries('tasks');
         queryClient.setQueryData('tasks', (oldQueryData) => {
-          return {
-            ...oldQueryData,
-            data: [...oldQueryData.data, ...data.data]
-          }
+          return [...oldQueryData, data.data]
         })
       }
     })
@@ -124,7 +121,6 @@ const CreateTask = (props) => {
   //   )
   // }
 
-  // ! IN THE MIDDLE OF CONVERTING CREATETASK WINDOW TO NEW STYLE
   return (
     <div className={style.popupContainer} onClick={props.handleClose}>
       <div className={style.container} onClick={(e) => e.stopPropagation()}>

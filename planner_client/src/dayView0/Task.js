@@ -68,20 +68,17 @@ const Task = (props) => {
 
         setTaskComplete(!taskComplete)
         queryClient.setQueryData('tasks', (oldQueryData) => {
-          const taskIdToUpdate = data.data[0].id // the ID of the task to update
+          const taskIdToUpdate = data.data.id // the ID of the task to update
 
-          const updatedTasks = oldQueryData.data.map((task) => {
+          const updatedTasks = oldQueryData.map((task) => {
             if (task.id === taskIdToUpdate) {
               // create a new object for the updated task
-              return data.data[0]
+              return data.data
             }
             return task
           })
 
-          return {
-            ...oldQueryData,
-            data: updatedTasks
-          }
+          return updatedTasks
         })
       }
     })
