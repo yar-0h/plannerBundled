@@ -41,21 +41,17 @@ const EditHabit = (props) => {
       onSuccess: (data) => {
         // queryClient.invalidateQueries('habits');
         queryClient.setQueryData('habits', (oldQueryData) => {
-          
-          const habitIdToUpdate = data.data[0].id // the ID of the habit to update
+          const habitIdToUpdate = data.data.id // the ID of the habit to update
 
-          const updatedHabits = oldQueryData.data.map((habit) => {
-            if (habit.id === habitIdToUpdate) {
+          const updatedHabits = oldQueryData.map((habit) => {
+            if (habit.id == habitIdToUpdate) {
               // create a new object for the updated habit
-              return data.data[0]
+              return data.data
             }
             return habit
           })
 
-          return {
-            ...oldQueryData,
-            data: updatedHabits
-          }
+          return updatedHabits
         })
       }
     })
@@ -78,6 +74,8 @@ const EditHabit = (props) => {
     }
 
     updateSubmit(habit)
+    props.handleClose()
+
   }
 
   // let handleDelete = async () => {
@@ -101,10 +99,7 @@ const EditHabit = (props) => {
       onSuccess: () => {
         // queryClient.invalidateQueries('habits');
         queryClient.setQueryData('habits', (oldQueryData) => {
-          return {
-            ...oldQueryData,
-            data: [...oldQueryData.data.filter((habit) => habit.id !== props.id)]
-          }
+          return [...oldQueryData.filter((habit) => habit.id !== props.id)]
         })
       }
     })
@@ -119,8 +114,9 @@ const EditHabit = (props) => {
   const { mutate: deleteSubmit } = useRemoveHabit()
 
   const deleteHabit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     deleteSubmit()
+    props.handleClose()
   }
 
   return (
@@ -148,7 +144,7 @@ const EditHabit = (props) => {
                   inputMode='numeric'
                   pattern="[1-9]*"
                   value={period}
-                  onChange={(e) => setPeriod(e.target.value)}
+                  onChange={(e) => setPeriod(Number(e.target.value))}
                 />
               </div>
               <div className={`${style.periodRight} ${style.fieldLabel}`}>DAYS</div>
@@ -172,9 +168,9 @@ const EditHabit = (props) => {
 
 // Prop types for Component
 EditHabit.propTypes = {
-  id: PropTypes.string,
-  period: PropTypes.string,
-  freq: PropTypes.string,
+  id: PropTypes.number,
+  period: PropTypes.number,
+  freq: PropTypes.number,
   desc: PropTypes.string,
   handleClose: PropTypes.func
 }

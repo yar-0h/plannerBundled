@@ -17,10 +17,9 @@ const CreateHabit = (props) => {
     const queryClient = useQueryClient()
     return useMutation(addHabit, {
       onSuccess: (data) => {
-        // console.log(data)
         // queryClient.invalidateQueries('habits');
         queryClient.setQueryData('habits', (oldQueryData) => {
-          return [ ...oldQueryData, data]
+          return [ ...oldQueryData, data.data]
         })
       }
     })
@@ -37,6 +36,8 @@ const CreateHabit = (props) => {
 
     const habit = { description, dateCreated, frequency, period }
     mutate(habit)
+    props.handleClose()
+
   }
 
   return (

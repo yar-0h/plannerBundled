@@ -12,8 +12,6 @@ const databaseName = 'planner.db'
 const path = require('path')
 const pathName = path.join(__dirname, databaseName)
 
-
-
 // async function query(sql, params) {
 //     const connection = await createConnection(db);
 //     const [results, ] = await connection.execute(sql, params);
@@ -23,7 +21,7 @@ const pathName = path.join(__dirname, databaseName)
 
 async function query(sql, params) {
 
-    let db = new sqlite3.Database('./db/planner.db', (err) => {
+    let db = new sqlite3.Database(pathName, (err) => {
         if (err) {
             console.error(err.message);
         }
@@ -51,7 +49,7 @@ async function query(sql, params) {
 
 async function affect(sql, params) {
 
-    let db = new sqlite3.Database('./db/planner.db', (err) => {
+    let db = new sqlite3.Database(pathName, (err) => {
         if (err) {
             console.error(err.message);
         }
@@ -82,7 +80,7 @@ async function affect(sql, params) {
 
 
 
-function reset() {
+async function reset() {
 
     // db4free doesnt allow db initialization
     
@@ -102,11 +100,11 @@ function reset() {
 
     try {
         // clear potential events table
-        query(
+        await affect(
             `DROP TABLE IF EXISTS tasks`
         );
 
-        query(
+        await affect(
             `CREATE TABLE IF NOT EXISTS events (
                 id INTEGER NOT NULL PRIMARY KEY,
                 description varchar(255) NOT NULL,
@@ -126,10 +124,10 @@ function reset() {
     // initialize goals table
     try {   
         // clear potential goals table
-        query(
+        await affect(
             `DROP TABLE IF EXISTS goals`
         );
-        query(
+        await affect(
             `CREATE TABLE IF NOT EXISTS goals (
                 id INTEGER NOT NULL PRIMARY KEY,
                 description varchar(255) NOT NULL,
@@ -149,11 +147,11 @@ function reset() {
     // initialize habits table
     try {
         // clear potential habits table
-        query(
+        await affect(
             `DROP TABLE IF EXISTS habits`
         );
 
-        query(
+        await affect(
             `CREATE TABLE IF NOT EXISTS habits (
                 id INTEGER NOT NULL PRIMARY KEY,
                 description varchar(255) NOT NULL,
@@ -171,11 +169,11 @@ function reset() {
     // initialize habitRecords table
     try {
         // clear potential habitrecords table
-        query(
+        await affect(
             `DROP TABLE IF EXISTS habitRecords`
         );
 
-        query(
+        await affect(
             `CREATE TABLE IF NOT EXISTS habitRecords (
                 id INTEGER NOT NULL,
                 date DATETIME NOT NULL,
@@ -191,11 +189,11 @@ function reset() {
     // initialize tasks table
     try {
         // clear potential tasks table
-        query(
+        await affect(
             `DROP TABLE IF EXISTS tasks`
         );
 
-        query(
+        await affect(
             `CREATE TABLE IF NOT EXISTS tasks (
                 id INTEGER NOT NULL PRIMARY KEY,
                 description varchar(255) NOT NULL,
@@ -211,8 +209,9 @@ function reset() {
         console.error(`error initializing tasks table `, err.message);
         throw (err);
     }
+    
 
-    console.log(query("SELECT count(*) FROM events"));
+    console.log(await query("SELECT count(*) FROM events"));
     console.log("database successfully reset")
 }
 

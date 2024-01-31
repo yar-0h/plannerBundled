@@ -53,7 +53,7 @@ const TaskDaily = (props) => {
               props.tasks.map((e) => {
                 // console.log(e)
                 return (
-                  <tr key={e.id}>
+                  <tr key={"task_" + e.id}>
                     <Task
                       id={e.id}
                       desc={e.description}

@@ -22,8 +22,7 @@ const EditTask = (props) => {
       onSuccess: (data) => {
         // queryClient.invalidateQueries('tasks');
         queryClient.setQueryData('tasks', (oldQueryData) => {
-          const taskIdToUpdate = data.id // the ID of the task to update
-          console.log(taskIdToUpdate)
+          const taskIdToUpdate = data.data.id // the ID of the task to update
           const updatedTasks = oldQueryData.map((task) => {
             if (task.id === taskIdToUpdate) {
               // create a new object for the updated task

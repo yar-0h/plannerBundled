@@ -87,7 +87,9 @@ async function update(id, habit) {
     }
     else {console.log(`error updating habit ${id}`);}
     
-    return result.changes;
+    habit.id = Number(id)
+
+    return habit;
 }
 
 
@@ -95,7 +97,6 @@ async function update(id, habit) {
 async function createRecord(id, date) {
     var sql = "INSERT INTO habitRecords (id, date) VALUES (?, ?)"
     var params = [id, date.date]
-    console.log(id)
     const habitCheck = await get(id)
     
     if (habitCheck.length < 1) {

@@ -23,7 +23,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "client": "cd ./planner_client && yarn run dev",
-    "server": "cd ./planner_server && yarn start"
+    "server": "cd ./planner_server && yarn start",
+    "server_init": "cd ./planner_server/db/ && node db_init.js"
   },
   "browserslist": {
     "production": [
