@@ -25,21 +25,21 @@ async function query(sql, params) {
 
     let db = new sqlite3.Database('./db/planner.db', (err) => {
         if (err) {
-            console.err(err.message);
+            console.error(err.message);
         }
     })
 
     const results = await new Promise(function (resolve, reject) {
         db.all(sql, params, (err, rows) => {
             if (err) {
-                console.err(err.message);
+                console.error(err.message);
             }
     
             resolve(rows)
 
             db.close((err) => {
                 if (err) {
-                    console.err(err.message);
+                    console.error(err.message);
                 }
             })
         });
@@ -53,7 +53,7 @@ async function affect(sql, params) {
 
     let db = new sqlite3.Database('./db/planner.db', (err) => {
         if (err) {
-            console.err(err.message);
+            console.error(err.message);
         }
     })
 //    db.run(`INSERT INTO tasks (description, dateCreated, dateDue, priority) VALUES (?, ?, ?, ?)`, ['postman testtask', '2033-11-11 11:11:11', '2033-11-22 12:12:12', '3'], function(err) {
@@ -73,7 +73,7 @@ async function affect(sql, params) {
 
     db.close((err) => {
         if (err) {
-            console.err(err.message);
+            console.error(err.message);
         }
     })
 
