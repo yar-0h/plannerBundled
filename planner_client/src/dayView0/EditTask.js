@@ -96,6 +96,7 @@ const EditTask = (props) => {
                 <input
                   type='text'
                   size='42'
+                  value={description}
                   placeholder={description}
                   onChange={(e) => setDescription(e.target.value)}
                 />
