@@ -45,11 +45,11 @@ A small calendar app made with react and sqlite, features a to-do list and habit
 
 
 ## screenshots (so you don't have to install)
-![](relative/path/in/repository/to/screen0.svg)
-![](relative/path/in/repository/to/screen1.svg)
-![](relative/path/in/repository/to/screen2.svg)
-![](relative/path/in/repository/to/screen3.svg)
-![](relative/path/in/repository/to/screen4.svg)
+![screen1](./screenshots/screenshot1.png)
+![screen2](./screenshots/screenshot2.png)
+![screen3](./screenshots/screenshot3.png)
+![screen4](./screenshots/screenshot4.png)
+![screen5](./screenshots/screenshot5.png)
 
 
 
