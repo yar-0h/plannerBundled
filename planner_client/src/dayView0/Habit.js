@@ -89,7 +89,7 @@ const Habit = (props) => {
 
     if (successCheck > (props.period * 2)) {
       streakTrackerStyle.visibility = 'visible'
-      streakCount = successCheck / props.period
+      streakCount = Math.floor(successCheck / props.period)
     }
 
     return content
